@@ -1,0 +1,24 @@
+20/07/2023 18:49:48 - root - WARNING - Watch out!
+20/07/2023 19:04:18 - root - ERROR - An exception was thrown!
+20/07/2023 19:04:18 - root - ERROR - An exception was thrown!
+20/07/2023 19:04:59 - root - ERROR - An exception was thrown!
+20/07/2023 19:04:59 - root - ERROR - An exception was thrown!
+20/07/2023 19:06:23 - root - ERROR - An exception was thrown!
+20/07/2023 19:06:23 - root - ERROR - An exception was thrown!
+20/07/2023 19:07:00 - root - ERROR - An exception was thrown!
+20/07/2023 19:16:34 - root - INFO - Something looking not excisting data
+20/07/2023 19:18:26 - root - INFO - Something looking not excisting data
+20/07/2023 19:18:26 - root - ERROR - Exception Occurred
+Traceback (most recent call last):
+  File "C:\Users\Vartotojas\Desktop\Kursai\repetition_task\all_program.py", line 39, in cpu_names
+    for key, value in self.cpu_list.items():
+                      ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'
+20/07/2023 19:21:37 - root - INFO - Something looking not excisting data
+20/07/2023 19:21:37 - root - ERROR - Something looking not excisting data
+20/07/2023 19:25:58 - root - INFO - Something looking not excisting data
+20/07/2023 19:25:58 - root - ERROR - Something looking not excisting data
+20/07/2023 19:34:13 - root - INFO - Something looking not excisting data
+20/07/2023 19:34:13 - root - ERROR - Something looking not excisting data
+20/07/2023 19:34:32 - root - INFO - Something looking not excisting data
+20/07/2023 19:34:32 - root - ERROR - Something looking not excisting data
