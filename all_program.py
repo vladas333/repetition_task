@@ -67,6 +67,7 @@ class CPU(PcParts):
 
     def cpu_tdp() -> list:
         pass
+    
 
 all_pc = PcParts()
 # print(all_pc.show_all_pc_parts())
