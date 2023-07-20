@@ -8,28 +8,26 @@ class PcParts:
     def __init__(self) -> None:
         self.pc_parts = PC_PARTS_DICT
 
-
-    def show_all_pc_parts(self) -> dict:
+    def show_all_pc_parts(self) -> list:
         part_list = []
         for key, val in self.pc_parts.items():
             part_list.append(key)
         return part_list
     
     def get_select_dict(self, selected_dict: str) -> Union[dict, list]:
-        new_dict: dict = {}
+        selected_item_dict: dict = {}
         try:
             for key, value in self.pc_parts.items():
                 if selected_dict in key:
-                    new_dict.update(value)
-            new_dict.pop()
-            return new_dict
+                    selected_item_dict.update(value)
+            selected_item_dict.pop()
+            return selected_item_dict
         except:
             logging.info("Something looking not excisting data")
-            return f"Elements not found"
+            return PcParts().show_all_pc_parts()
     
 class CPU(PcParts):
     def __init__(self, part_name : str) -> None:  
-        self.pc_parts = PC_PARTS_DICT
         self.part_name = part_name
 
         self.cpu_list = PcParts().get_select_dict(self.part_name)
@@ -39,9 +37,10 @@ class CPU(PcParts):
         try:
             for key, value in self.cpu_list.items():
                 cpu_names_list.append(key)
-            return cpu_names_list
+            return f"Just CPU name list:\n", cpu_names_list
         except:
             logging.error("Something looking not excisting data")
+            return f"Not found, can select just:\n", self.cpu_list
 
     
     def full_cpu_list(self) -> list:
@@ -73,6 +72,6 @@ all_pc = PcParts()
 # print(all_pc.show_all_pc_parts())
 # print(all_pc.get_select_dict("SMTH"))
 cpu_cl = CPU("CPU")
-print(f"Just CPU name list:\n",cpu_cl.cpu_names())
+print(cpu_cl.cpu_names())
 # print(f"Full list with spec:\n", cpu_cl.full_cpu_list())
 # print(f"CPU names with Cores count:\n", cpu_cl.cpu_cores())
