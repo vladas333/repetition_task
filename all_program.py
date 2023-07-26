@@ -101,13 +101,20 @@ class CPU(PcParts):
         }
         return self.cpu_full_dict
     
-    def find_cpu_by_name(self, find_cpu_name: str) -> dict:
-        search_cpu = {}
+    def find_cpu_by_name_with_spec(self, find_cpu_name: str) -> dict:
+        search_cpu_spec = {}
         for key, value in self.cpu_full_dict.items():
-            if key == find_cpu_name:
-                search_cpu[key] = value
-        return search_cpu
+            if find_cpu_name in key:
+                search_cpu_spec[key] = value
+        return search_cpu_spec
+    
 
+    def find_cpu_by_name_just_names(self, find_cpu_name: str) -> list:
+        search_cpu_names = []
+        for key, value in self.cpu_full_dict.items():
+            if find_cpu_name in key:
+                search_cpu_names.append(key)
+        return search_cpu_names
 
 # all_pc = PcParts()
 # print(all_pc.show_all_pc_parts())
@@ -120,4 +127,6 @@ cpu_cl = CPU("CPU")
 # print(f"CPU names with Boost speed:\n", cpu_cl.cpu_boost_speed())
 # print(f"CPU names with thermal design power (TDP):\n", cpu_cl.cpu_tdp())
 # print(cpu_cl.add_cpu("Intel Core i7-12700K", 12, 3.6, 5, 125))
-print(f"Search CPU: \n", cpu_cl.find_cpu_by_name("Intel"))
+cpu_name = "Intel"
+print(f"Search CPU-{cpu_name},, return with spec: \n", cpu_cl.find_cpu_by_name_with_spec(cpu_name))
+print(f"Search CPU-{cpu_name}, return just list: \n", cpu_cl.find_cpu_by_name_just_names(cpu_name))
