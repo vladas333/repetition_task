@@ -30,14 +30,15 @@ class PcParts:
                     selected_item_dict.update(value)
             return selected_item_dict
         except:
-            logging.info("Something looking not excisting data")
+            logging.info(
+                "Something looking not excisting data in: PcParts.get_select_dict"
+            )
             return PcParts().show_all_pc_parts()
 
 
 class CPU(PcParts):
     def __init__(self, part_name: str) -> None:
         self.part_name = part_name
-
         self.cpu_full_dict: dict = PcParts().get_select_dict(self.part_name)
 
     def cpu_names(self) -> list:
@@ -47,7 +48,7 @@ class CPU(PcParts):
                 cpu_names_list.append(key)
             return cpu_names_list
         except:
-            logging.error("Something looking not excisting data")
+            logging.error("Something looking not excisting data in: CPU.cpu_names")
             return f"Not found, you can select just:\n", self.cpu_full_dict
 
     def full_cpu_dict(self) -> dict:
@@ -85,29 +86,12 @@ class CPU(PcParts):
                     cpu_tdp_dict[key] = value1
         return cpu_tdp_dict
 
-    def add_cpu(
-        self,
-        cpu_name: str,
-        core_count: int,
-        performance_speed: float,
-        boost_speed: float,
-        tdp: int,
-    ) -> dict:
-        self.cpu_full_dict[cpu_name] = {
-            "Core_count": core_count,
-            "Performace_speed": performance_speed,
-            "Boost_speed": boost_speed,
-            "TDP": tdp,
-        }
-        return self.cpu_full_dict
-    
     def find_cpu_by_name_with_spec(self, find_cpu_name: str) -> dict:
         search_cpu_spec = {}
         for key, value in self.cpu_full_dict.items():
             if find_cpu_name in key:
                 search_cpu_spec[key] = value
         return search_cpu_spec
-    
 
     def find_cpu_by_name_just_names(self, find_cpu_name: str) -> list:
         search_cpu_names = []
@@ -116,17 +100,32 @@ class CPU(PcParts):
                 search_cpu_names.append(key)
         return search_cpu_names
 
-# all_pc = PcParts()
-# print(all_pc.show_all_pc_parts())
-# print(all_pc.get_select_dict("CPU"))
-cpu_cl = CPU("CPU")
-# print(f"Just CPU names list: \n", cpu_cl.cpu_names())
-# print(f"Full list with spec:\n", cpu_cl.full_cpu_dict())
-# print(f"CPU names with Cores count:\n", cpu_cl.cpu_cores())
-# print(f"CPU names with Performace speed:\n", cpu_cl.cpu_performance_speed())
-# print(f"CPU names with Boost speed:\n", cpu_cl.cpu_boost_speed())
-# print(f"CPU names with thermal design power (TDP):\n", cpu_cl.cpu_tdp())
-# print(cpu_cl.add_cpu("Intel Core i7-12700K", 12, 3.6, 5, 125))
-cpu_name = "Intel"
-print(f"Search CPU-{cpu_name},, return with spec: \n", cpu_cl.find_cpu_by_name_with_spec(cpu_name))
-print(f"Search CPU-{cpu_name}, return just list: \n", cpu_cl.find_cpu_by_name_just_names(cpu_name))
+    def add_cpu(
+        self,
+        cpu_name: str,
+        core_count: int,
+        performance_speed: float,
+        boost_speed: float,
+        tdp: int,
+    ) -> Union[dict, list]:
+        try:
+            self.cpu_full_dict[cpu_name] = {
+                "Core_count": int(core_count),
+                "Performace_speed": float(performance_speed),
+                "Boost_speed": float(boost_speed),
+                "TDP": int(tdp),
+            }
+            logging.info(f"New CPU was added")
+            return self.cpu_full_dict
+        except:
+            logging.error("Couldn't add new CPU to database")
+            return f"Something go wrong. CPU wasn't added\n"
+
+
+class Cooler(PcParts):
+    def __init__(self, part_name: str) -> None:
+        self.part_name = part_name
+        self.cpu_full_dict: dict = PcParts().get_select_dict(self.part_name)
+
+    def full_cooler_dict(self) -> dict:
+        return self.cpu_full_dict
