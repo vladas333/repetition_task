@@ -22,3 +22,40 @@ AttributeError: 'NoneType' object has no attribute 'items'
 20/07/2023 19:34:13 - root - ERROR - Something looking not excisting data
 20/07/2023 19:34:32 - root - INFO - Something looking not excisting data
 20/07/2023 19:34:32 - root - ERROR - Something looking not excisting data
+20/07/2023 20:03:27 - root - INFO - Something looking not excisting data
+20/07/2023 20:03:27 - root - ERROR - Something looking not excisting data
+20/07/2023 20:05:09 - root - INFO - Something looking not excisting data
+20/07/2023 20:05:09 - root - ERROR - Something looking not excisting data
+20/07/2023 20:06:42 - root - INFO - Something looking not excisting data
+20/07/2023 20:06:42 - root - ERROR - Something looking not excisting data
+24/07/2023 18:18:51 - root - INFO - Something looking not excisting data
+24/07/2023 18:23:56 - root - INFO - Something looking not excisting data
+24/07/2023 18:24:31 - root - INFO - Something looking not excisting data
+24/07/2023 18:30:20 - root - INFO - Something looking not excisting data
+24/07/2023 18:30:46 - root - INFO - Something looking not excisting data
+24/07/2023 18:31:13 - root - INFO - Something looking not excisting data
+24/07/2023 18:32:20 - root - INFO - Something looking not excisting data
+24/07/2023 18:32:55 - root - INFO - Something looking not excisting data
+24/07/2023 18:33:14 - root - INFO - Something looking not excisting data
+24/07/2023 18:33:14 - root - INFO - Something looking not excisting data
+24/07/2023 18:33:22 - root - INFO - Something looking not excisting data
+24/07/2023 18:33:22 - root - INFO - Something looking not excisting data
+24/07/2023 18:34:14 - root - INFO - Something looking not excisting data
+24/07/2023 18:34:14 - root - INFO - Something looking not excisting data
+24/07/2023 18:37:23 - root - INFO - Something looking not excisting data
+24/07/2023 18:37:23 - root - INFO - Something looking not excisting data
+24/07/2023 19:17:02 - root - INFO - Something looking not excisting data
+24/07/2023 19:19:50 - root - INFO - Something looking not excisting data
+24/07/2023 19:35:19 - root - INFO - Something looking not excisting data
+26/07/2023 20:02:50 - root - INFO - New CPU was added
+26/07/2023 20:03:01 - root - INFO - New CPU was added
+26/07/2023 20:03:13 - root - INFO - New CPU was added
+26/07/2023 20:03:26 - root - INFO - New CPU was added
+26/07/2023 20:07:43 - root - INFO - New CPU was added
+26/07/2023 20:08:15 - root - ERROR - Couldn't add new CPU to database
+26/07/2023 20:08:59 - root - INFO - New CPU was added
+27/07/2023 16:57:45 - root - INFO - Something looking not excisting data
+27/07/2023 16:58:24 - root - INFO - Something looking not excisting data
+27/07/2023 16:58:24 - root - ERROR - Something looking not excisting data
+27/07/2023 17:00:25 - root - INFO - Something looking not excisting data in: PcParts.get_select_dict
+27/07/2023 17:00:25 - root - ERROR - Something looking not excisting data in: CPU.cpu_names
